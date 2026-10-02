@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nunca fue lo que Surja | Hamburguesas con propósito</title>
+
+<style>
+/* =========================
+   DISEÑO COMPLETO
+   No necesita otro archivo CSS
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff8eb;
+    color:#241811;
+    line-height:1.6;
+}
+
+:root{
+    --negro:#17120e;
+    --marron:#5a301d;
+    --dorado:#e0ad45;
+    --crema:#fff8eb;
+    --rojo:#a93628;
+    --blanco:#ffffff;
+}
+
+/* NAVEGACIÓN */
+
+nav{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:22px 7%;
+
+    background:rgba(0,0,0,.22);
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo{
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo .cruz{
+    color:var(--dorado);
+    font-size:25px;
+    margin-right:7px;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.menu a:hover{
+    color:var(--dorado);
+}
+
+/* HERO */
+
+.hero{
+    min-height:760px;
+    position:relative;
+    overflow:hidden;
+
+    color:white;
+
+    background:
+        linear-gradient(rgba(18,14,11,.62),rgba(18,14,11,.72)),
+        url("img/fondo-principal.jpg") center/cover no-repeat;
+}
+
+.hero:before{
+    content:"🍔";
+    position:absolute;
+    right:-50px;
+    bottom:-110px;
+    font-size:420px;
+    opacity:.09;
+    transform:rotate(-12deg);
+}
+
+.hero-contenido{
+    position:relative;
+    z-index:2;
+    padding:190px 7% 100px;
+    max-width:850px;
+}
+
+.etiqueta{
+    display:inline-block;
+    color:var(--dorado);
+    font-weight:bold;
+    letter-spacing:3px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(55px,8vw,100px);
+    line-height:.95;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--dorado);
+    font-style:italic;
+}
+
+.hero p{
+    font-size:21px;
+    max-width:650px;
+    color:#f0e5d8;
+}
+
+.botones{
+    margin-top:35px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.boton{
+    display:inline-block;
+    padding:15px 27px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.boton:hover{
+    transform:translateY(-3px);
+}
+
+.boton-dorado{
+    background:var(--dorado);
+    color:#21160d;
+}
+
+.boton-transparente{
+    border:1px solid white;
+    color:white;
+}
+
+.versiculo-flotante{
+    position:absolute;
+    right:8%;
+    top:40%;
+    z-index:3;
+
+    width:250px;
+    padding:25px;
+
+    border-left:3px solid var(--dorado);
+
+    background:rgba(0,0,0,.15);
+
+    font-family:Georgia,serif;
+    font-size:19px;
+}
+
+.versiculo-flotante small{
+    display:block;
+    color:var(--dorado);
+    font-family:Arial;
+    font-size:12px;
+    margin-top:12px;
+}
+
+/* INTRO */
+
+.intro{
+    background:white;
+    padding:100px 10%;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.titulo-seccion{
+    font-family:Georgia,serif;
+    font-size:48px;
+    line-height:1.1;
+}
+
+.titulo-seccion span{
+    color:var(--rojo);
+}
+
+.texto{
+    color:#65594e;
+    font-size:18px;
+}
+
+/* COMBOS */
+
+.combos{
+    padding:100px 7%;
+    background:#f3e6d1;
+}
+
+.encabezado{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.encabezado h2{
+    font-family:Georgia,serif;
+    font-size:48px;
+}
+
+.encabezado p{
+    color:#71665b;
+    margin-top:10px;
+}
+
+.tarjetas{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.tarjeta{
+    background:white;
+    padding:27px;
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(50,30,15,.12);
+
+    transition:.25s;
+}
+
+.tarjeta:hover{
+    transform:translateY(-8px);
+}
+
+.tarjeta.destacada{
+    background:var(--negro);
+    color:white;
+}
+
+.tarjeta-superior{
+    display:flex;
+    justify-content:space-between;
+
+    color:var(--dorado);
+    font-size:11px;
+    font-weight:bold;
+}
+
+.hamburguesa{
+    text-align:center;
+    font-size:65px;
+    margin:20px 0;
+}
+
+.tarjeta h3{
+    font-family:Georgia,serif;
+    font-size:25px;
+}
+
+.tarjeta p{
+    color:#84776a;
+    min-height:55px;
+    font-size:14px;
+}
+
+.tarjeta.destacada p{
+    color:#c9beb3;
+}
+
+.precio{
+    display:block;
+    font-size:25px;
+    font-weight:bold;
+    color:var(--rojo);
+    margin:15px 0;
+}
+
+.tarjeta.destacada .precio{
+    color:var(--dorado);
+}
+
+.pedir{
+    width:100%;
+    border:0;
+    padding:13px;
+
+    background:var(--marron);
+    color:white;
+
+    border-radius:7px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.destacada .pedir{
+    background:var(--dorado);
+    color:#21160d;
+}
+
+/* PROPÓSITO */
+
+.proposito{
+    padding:110px 13%;
+    background:var(--negro);
+    color:white;
+
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.cruz-grande{
+    width:150px;
+    height:150px;
+
+    border:1px solid var(--dorado);
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--dorado);
+    font-size:70px;
+
+    box-shadow:0 0 0 18px rgba(224,173,69,.05);
+}
+
+.proposito p{
+    color:#d0c4b8;
+    max-width:700px;
+    margin:20px 0;
+}
+
+.valores{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.valor{
+    border:1px solid rgba(224,173,69,.45);
+    padding:8px 15px;
+    border-radius:30px;
+    color:#eed9a7;
+}
+
+/* VERSÍCULO */
+
+.versiculo{
+    padding:100px 12%;
+    background:var(--dorado);
+    text-align:center;
+}
+
+.comilla{
+    font-family:Georgia,serif;
+    font-size:80px;
+    line-height:.5;
+}
+
+.versiculo p{
+    font-family:Georgia,serif;
+    font-size:38px;
+    line-height:1.25;
+    max-width:900px;
+    margin:25px auto;
+}
+
+.versiculo strong{
+    letter-spacing:3px;
+}
+
+/* EXPERIENCIA */
+
+.experiencia{
+    background:white;
+    padding:100px 8%;
+}
+
+.experiencia h2{
+    text-align:center;
+    font-family:Georgia,serif;
+    font-size:48px;
+    margin-bottom:50px;
+}
+
+.experiencia-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.experiencia-card{
+    padding:35px;
+    background:#fff8ed;
+    border-top:4px solid var(--dorado);
+}
+
+.experiencia-card span{
+    color:var(--rojo);
+    font-weight:bold;
+}
+
+.experiencia-card h3{
+    font-family:Georgia,serif;
+    font-size:28px;
+    margin:10px 0;
+}
+
+/* PEDIDOS */
+.pedidos {
+    background-image: url("img/HamburS.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+}
+
+.pedidos{
+    padding:80px 10%;
+    background:var(--rojo);
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.pedidos h2{
+    font-family:Georgia,serif;
+    font-size:43px;
+}
+
+.pedidos p{
+    color:#f3d7d1;
+}
+
+footer{
+    background:#100d0a;
+    color:#a99e94;
+    text-align:center;
+    padding:45px 8%;
+}
+
+footer .logo{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#d8c9b8;
+    font-family:Georgia,serif;
+    margin-bottom:12px;
+}
+
+
+/* =========================
+   FOTOS REALES DE PRODUCTOS
+   Colocá tus fotos en la carpeta img/
+========================= */
+
+.foto-producto{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+    border-radius:14px;
+    margin:0 0 20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.14);
+}
+
+.seccion-productos{
+    padding:100px 7%;
+    background:#fffaf2;
+}
+
+.productos-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.producto-foto-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(50,30,15,.12);
+    transition:.25s;
+}
+
+.producto-foto-card:hover{
+    transform:translateY(-7px);
+}
+
+.producto-foto-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
+
+.producto-foto-contenido{
+    padding:22px;
+}
+
+.producto-foto-contenido h3{
+    font-family:Georgia,serif;
+    font-size:27px;
+    margin-bottom:7px;
+}
+
+.producto-foto-contenido p{
+    color:#75695e;
+    font-size:14px;
+    min-height:45px;
+}
+
+.producto-foto-contenido .precio{
+    margin:10px 0 15px;
+}
+
+.boton-whatsapp{
+    display:inline-block;
+    width:100%;
+    text-align:center;
+    padding:12px 15px;
+    border-radius:8px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.boton-whatsapp:hover{
+    transform:translateY(-2px);
+}
+
+.contacto-directo{
+    margin-top:25px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.boton-telefono{
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:8px;
+    background:white;
+    color:var(--marron);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+@media(max-width:950px){
+    .productos-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .productos-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .menu{
+        display:none;
+    }
+
+    .versiculo-flotante{
+        display:none;
+    }
+
+    .intro,
+    .proposito{
+        grid-template-columns:1fr;
+    }
+
+    .tarjetas{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .experiencia-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pedidos{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:700px;
+    }
+
+    .hero-contenido{
+        padding:150px 7% 70px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .tarjetas{
+        grid-template-columns:1fr;
+    }
+
+    .intro,
+    .combos,
+    .proposito,
+    .experiencia{
+        padding:70px 7%;
+    }
+
+    .titulo-seccion,
+    .encabezado h2,
+    .experiencia h2{
+        font-size:38px;
+    }
+
+    .versiculo{
+        padding:70px 7%;
+    }
+
+    .versiculo p{
+        font-size:28px;
+    }
+
+    .pedidos{
+        padding:65px 7%;
+    }
+
+    .pedidos h2{
+        font-size:36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero" id="inicio">
+
+<nav>
+    <div class="logo">
+        <span class="cruz">✝</span>
+        NUNCA FUE LO QUE SURJA
+    </div>
+
+    <div class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#combos">Combos</a>
+        <a href="#productos">Productos</a>
+        <a href="#historia">Propósito</a>
+        <a href="#mensaje">Palabra</a>
+        <a href="#contacto">Pedidos</a>
+    </div>
+</nav>
+
+<div class="hero-contenido">
+
+    <div class="etiqueta">
+        🍔 SABOR • FAMILIA • FE • PROPÓSITO
+    </div>
+
+    <h1>
+        No fue casualidad.<br>
+        <span>Fue un propósito.</span>
+    </h1>
+
+    <p>
+        Hamburguesas hechas con cariño, combos accesibles
+        y un emprendimiento puesto en las manos de Dios.
+    </p>
+
+    <div class="botones">
+        <a href="#combos" class="boton boton-dorado">
+            🍔 VER COMBOS
+        </a>
+
+        <a href="#contacto" class="boton boton-transparente">
+            HACER PEDIDO
+        </a>
+    </div>
+
+</div>
+
+<div class="versiculo-flotante">
+    “Encomienda a Jehová tus obras,
+    y tus pensamientos serán afirmados.”
+    <small>Proverbios 16:3</small>
+</div>
+
+</header>
+
+
+<section class="intro">
+
+<div>
+    <div class="etiqueta">NO ES SOLO UNA HAMBURGUESA</div>
+
+    <h2 class="titulo-seccion">
+        Lo que parecía casualidad,
+        <span>tenía propósito.</span>
+    </h2>
+</div>
+
+<p class="texto">
+    Nunca fue lo que surja. Detrás de cada hamburguesa
+    hay trabajo, familia, fe y sueños.
+    Queremos servir con excelencia y demostrar que
+    un pequeño emprendimiento también puede nacer
+    con un gran propósito.
+</p>
+
+</section>
+
+
+<section class="combos" id="combos">
+
+<div class="encabezado">
+
+    <div class="etiqueta">
+        🍔 MENÚ ESPECIAL
+    </div>
+
+    <h2>
+        Combos para compartir
+    </h2>
+
+    <p>
+        Precios accesibles para disfrutar en familia.
+    </p>
+
+</div>
+
+
+<div class="tarjetas">
+
+
+<div class="tarjeta destacada">
+
+    <div class="tarjeta-superior">
+        <span>⭐ MÁS ELEGIDO</span>
+        <b>01</b>
+    </div>
+
+    <img class="foto-producto" src="img/combo-gracia.jpeg" alt="Combo Gracia">
+
+    <h3>Combo Gracia</h3>
+
+    <p>
+        Hamburguesa + gaseosa
+    </p>
+
+    <span class="precio">
+        Gs. 15.000
+    </span>
+
+    <button class="pedir"
+        onclick="pedir('Combo Gracia - Gs. 15.000')">
+        PEDIR AHORA
+    </button>
+
+</div>
+
+<div class="tarjeta">
+
+    <div class="tarjeta-superior">
+        <span>💛 ECONÓMICO</span>
+        <b>04</b>
+    </div>
+
+    <img class="foto-producto" src="img/hamburguesa.jpeg" alt="Hamburguesa Simple">
+
+    <h3>Hamburguesa Simple</h3>
+
+    <p>
+        Hamburguesa Simple
+    </p>
+
+    <span class="precio">
+        Gs. 10.000
+    </span>
+
+    <button class="pedir"
+        onclick="pedir('Hamburguesa Simple - Gs. 10.000')">
+        PEDIR AHORA
+    </button>
+
+</div>
+
+<div class="tarjeta">
+
+    <div class="tarjeta-superior">
+        <span>🔥 CLÁSICO</span>
+        <b>02</b>
+    </div>
+
+    <img class="foto-producto" src="img/do.jpeg" alt="Combo Bendición">
+
+    <h3>Combo Bendición</h3>
+
+    <p>
+        Hamburguesa Doble Carne
+    </p>
+
+    <span class="precio">
+        Gs. 15.000
+    </span>
+
+    <button class="pedir"
+        onclick="pedir('Combo Bendición - Gs. 15.000')">
+        PEDIR AHORA
+    </button>
+
+</div>
+
+
+<div class="tarjeta">
+
+    <div class="tarjeta-superior">
+        <span>👨‍👩‍👦 FAMILIAR</span>
+        <b>03</b>
+    </div>
+
+    <img class="foto-producto" src="img/simple.jpeg" alt="Combo Familia">
+
+    <h3>Combo Familia</h3>
+
+    <p>
+        4 hamburguesas + 2 gaseosas
+    </p>
+
+    <span class="precio">
+        Gs. 50.000
+    </span>
+
+    <button class="pedir"
+        onclick="pedir('Combo Familia - Gs. 50.000')">
+        PEDIR AHORA
+    </button>
+
+</div>
+
+
+
+
+</div>
+</section>
+
+
+
+<section class="seccion-productos" id="productos">
+
+    <div class="encabezado">
+        <div class="etiqueta">🔥 NUESTROS PRODUCTOS</div>
+        <h2>Hechos para compartir</h2>
+        <p>Conocé nuestros productos y hacé tu pedido directamente por WhatsApp.</p>
+    </div>
+
+    <div class="productos-grid">
+
+        <article class="producto-foto-card">
+            <img src="img/HamburS.jpeg" alt="Hamburguesa artesanal">
+            <div class="producto-foto-contenido">
+                <h3>Hamburguesas</h3>
+                <p>Hamburguesas preparadas con dedicación y mucho sabor.</p>
+                <span class="precio">Desde Gs. 10.000</span>
+                <a class="boton-whatsapp"
+                   href="https://wa.me/595961796948?text=Hola%20👋%20Quiero%20hacer%20un%20pedido%20de%20hamburguesas."
+                   target="_blank">💬 PEDIR POR WHATSAPP</a>
+            </div>
+        </article>
+
+        <article class="producto-foto-card">
+            <img src="img/asaditos.jpeg" alt="Asaditos con mandioca">
+            <div class="producto-foto-contenido">
+                <h3>Asaditos</h3>
+                <p>Asaditos acompañados de mandioca, ideales para compartir.</p>
+                <span class="precio">Desde Gs. 7.000</span>
+                <a class="boton-whatsapp"
+                   href="https://wa.me/595961796948?text=Hola%20👋%20Quiero%20hacer%20un%20pedido%20de%20asaditos."
+                   target="_blank">💬 PEDIR POR WHATSAPP</a>
+            </div>
+        </article>
+
+        <article class="producto-foto-card">
+            <img src="img/Embutidos.png" alt="Chorizos">
+            <div class="producto-foto-contenido">
+                <h3>Embutidos</h3>
+                <p>Una opción sabrosa para disfrutar en familia.</p>
+                <span class="precio">Consultar precio</span>
+                <a class="boton-whatsapp"
+                   href="https://wa.me/595961796948?text=Hola%20👋%20Quiero%20consultar%20por%20los%20chorizos."
+                   target="_blank">💬 CONSULTAR</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="proposito" id="historia">
+
+<div class="cruz-grande">
+    ✝
+</div>
+
+<div>
+
+    <div class="etiqueta">
+        NUESTRO PROPÓSITO
+    </div>
+
+    <h2 class="titulo-seccion">
+        Servir con excelencia,
+        <span>crecer con fe.</span>
+    </h2>
+
+    <p>
+        Nunca fue lo que surja.
+        Nació con propósito: trabajar con honestidad,
+        cuidar a nuestra familia y ofrecer un producto
+        rico, accesible y preparado con amor.
+    </p>
+
+    <div class="valores">
+        <span class="valor">♡ Familia</span>
+        <span class="valor">✦ Excelencia</span>
+        <span class="valor">✝ Fe</span>
+        <span class="valor">☀ Gratitud</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="versiculo" id="mensaje">
+
+<div class="comilla">“</div>
+
+<p>
+    Encomienda a Jehová tus obras,
+    y tus pensamientos serán afirmados.
+</p>
+
+<strong>
+    PROVERBIOS 16:3
+</strong>
+
+</section>
+
+
+<section class="experiencia">
+
+<h2>
+    Más que comida.
+</h2>
+
+<div class="experiencia-grid">
+
+<div class="experiencia-card">
+    <span>01</span>
+    <h3>Sabor</h3>
+    <p>
+        Comida sencilla, abundante y preparada
+        con dedicación.
+    </p>
+</div>
+
+<div class="experiencia-card">
+    <span>02</span>
+    <h3>Precio</h3>
+    <p>
+        Combos accesibles para compartir
+        en familia.
+    </p>
+</div>
+
+<div class="experiencia-card">
+    <span>03</span>
+    <h3>Propósito</h3>
+    <p>
+        Un negocio construido sobre valores
+        cristianos.
+    </p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="pedidos" id="contacto">
+
+<div>
+
+    <div class="etiqueta">
+        📲 HACÉ TU PEDIDO
+    </div>
+
+    <h2>
+        ¿Ya elegiste tu combo?
+    </h2>
+
+    <p>
+        Escribinos y prepararemos tu pedido
+        con mucho cariño.
+    </p>
+
+</div>
+
+<a
+href="https://wa.me/595961796948"
+target="_blank"
+class="boton boton-dorado">
+
+💬 PEDIR POR WHATSAPP
+
+</a>
+
+</section>
+
+
+<footer>
+
+<div class="logo">
+    <span class="cruz">✝</span>
+    NUNCA FUE LO QUE SURJA
+</div>
+
+<p>
+    “Todo lo que hagan, háganlo de corazón.”
+    — Colosenses 3:23
+</p>
+
+<small>
+    © 2026 Nunca fue lo que Surja · Hecho con fe,
+    trabajo y gratitud.
+</small>
+
+</footer>
+
+
+<script>
+
+/*
+====================================
+CAMBIAR AQUÍ EL NÚMERO DE WHATSAPP
+====================================
+
+Ejemplo Paraguay:
+
+595981123456
+
+NO colocar +, espacios ni guiones.
+*/
+
+function pedir(producto){
+
+    // Cambiá este número por el WhatsApp de tu emprendimiento.
+    // Paraguay: 595 + número, sin +, espacios ni guiones.
+    const numero = "595961796948";
+
+    const mensaje =
+        "Hola 👋 Quiero hacer un pedido de "
+        + producto
+        + ".";
+
+    const enlace =
+        "https://wa.me/"
+        + numero
+        + "?text="
+        + encodeURIComponent(mensaje);
+
+    window.open(enlace, "_blank");
+}
+
+</script>
+
+</body>
+</html>
