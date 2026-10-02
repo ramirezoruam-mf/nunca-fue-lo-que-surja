@@ -1,0 +1,1 @@
+function pedir(producto){const numero="595000000000";const mensaje=encodeURIComponent("Hola 👋 Quiero hacer un pedido de "+producto+".");window.open("https://wa.me/"+numero+"?text="+mensaje,"_blank");}
